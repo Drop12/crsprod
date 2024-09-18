@@ -717,7 +717,7 @@ if(isset($_GET['sstooop']))
                                             data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form class="row g-3" action="insertscript" method="GET">
+                                        <form class="row g-3" action="insertscript.php" method="GET">
                                         <div class="col-md-12" hidden>
                                                 <label for="inputLastName"
                                                     class="form-label">Text</label>

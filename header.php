@@ -11,7 +11,7 @@
     {
         ?>
     <li class="menu-item" style="color:white;">
-        <a href="adminhome" class="menu-link">
+        <a href="adminhome.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-smart-home" style="color:white;"></i>
             <div data-i18n="Dashboards" style="color:white;">Dashboards</div>
         </a>
@@ -23,7 +23,7 @@
     {
     ?>
 <li class="menu-item">
-        <a href="useradminhome" class="menu-link">
+        <a href="useradminhome.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-smart-home" style="color:white;"></i>
             <div data-i18n="Dashboards" style="color:white;">Dashboards</div>
         </a>
@@ -65,20 +65,20 @@
     {
         ?>
     <li class="menu-item">
-        <a href="callregi" class="menu-link">
+        <a href="callregi.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Call Registry" style="color:white;">Call Registry</div>
         </a>
     </li>
     
     <li class="menu-item">
-        <a href="shortocee" class="menu-link">
+        <a href="shortocee.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Shortcode Entries" style="color:white;">Shortcode Entries</div>
         </a>
     </li>
     <li class="menu-item">
-        <a href="reassigned" class="menu-link">
+        <a href="reassigned.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Reassigned" style="color:white;">Reassigned</div>
         </a>
@@ -88,7 +88,7 @@
     }
     ?>
     <li class="menu-item">
-        <a href="transcribes" class="menu-link">
+        <a href="transcribes.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Transcribe Call" style="color:white;">Transcribe Call</div>
         </a>
@@ -161,19 +161,19 @@
     {
         ?>
     <li class="menu-item">
-        <a href="projects" class="menu-link">
+        <a href="projects.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Projects" style="color:white;">Projects</div>
         </a>
     </li>
     <li class="menu-item">
-        <a href="locations" class="menu-link">
+        <a href="locations.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Locations" style="color:white;">Locations</div>
         </a>
     </li>
     <li class="menu-item">
-        <a href="userprofiles" class="menu-link">
+        <a href="userprofiles.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Users Profiles" style="color:white;">Users Profiles</div>
         </a>
@@ -183,13 +183,13 @@
     }
     ?>
     <li class="menu-item">
-        <a href="changepassword" class="menu-link">
+        <a href="changepassword.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-layout-grid" style="color:white;"></i>
             <div data-i18n="Change Passwords" style="color:white;">Change Password</div>
         </a>
     </li>
     <li class="menu-item">
-        <a href="logout" class="menu-link">
+        <a href="logout.php" class="menu-link">
             <i class="menu-icon tf-icons ti ti-logout" style="color:white;"></i>
             <div data-i18n="Log Out" style="color:white;">Log Out</div>
         </a>

@@ -675,7 +675,7 @@ if (isset($_GET['passwordoneadmin'])) {
                                         <h5 class="mb-0" style="color:#374F99;">Kindly Fill The Below Form</h5>
                                     </div>
                                     <hr style="background-color:#374F99!important;">
-                                    <form class="row g-3" action="changepassword" method="GET">
+                                    <form class="row g-3" action="changepassword.php" method="GET">
                                         <div class="col-md-12">
                                             <label for="inputFirstName" class="form-label">New Password</label>
                                             <input type="password" class="form-control" id="passwordoneadmin" name="passwordoneadmin" placeholder="xxxxxxxxxxxx" required>

@@ -72,7 +72,7 @@ if (isset($_GET['insertquestionsqqqfn'])){
         }
     }
     
-    header("location:qffollowup?qnid_id=$questionid&&project_id=$project_id&&sstooop=$status");
+    header("location:qffollowup.php?qnid_id=$questionid&&project_id=$project_id&&sstooop=$status");
     
 }
 
@@ -125,7 +125,7 @@ if (isset($_GET['insertquestionsqqq'])){
             die($sql);
         }
         
-        header("location:projectq?reg_id=$insertquestionsqqq&&sstooop=$status");
+        header("location:projectq.php?reg_id=$insertquestionsqqq&&sstooop=$status");
     }
     elseif($questiontype=="DROPDOWN" AND $followupqn=="Yes")
     {
@@ -152,7 +152,7 @@ if (isset($_GET['insertquestionsqqq'])){
             die($sql);
         }
         
-        header("location:qffollowup?qnid_id=$question_id&&project_id=$insertquestionsqqq&&sstooop=$status");
+        header("location:qffollowup.php?qnid_id=$question_id&&project_id=$insertquestionsqqq&&sstooop=$status");
     }
 
     
@@ -211,11 +211,11 @@ if (isset($_GET['insertcallregistry'])){
 
     if( $tbl_channel=="shortcode")
     {
-        header("location:shortocee?rstatus=$status");
+        header("location:shortocee.php?rstatus=$status");
     }
     else
     {
-        header("location:callregi?rstatus=$status");
+        header("location:callregi.php?rstatus=$status");
     }
     
 }
@@ -235,7 +235,7 @@ if (isset($_GET['insertsectionsmn'])){
         die($sql);
     }
 
-    header("location:projectq?reg_id=$insertdprojectbb");
+    header("location:projectq.php?reg_id=$insertdprojectbb");
 }
 if (isset($_GET['insertdprojectbb'])){
 
@@ -253,7 +253,7 @@ if (isset($_GET['insertdprojectbb'])){
         die($sql);
     }
 
-    header("location:projectp?reg_id=$insertdprojectbb");
+    header("location:projectp.php?reg_id=$insertdprojectbb");
 }
 if (isset($_GET['productregistration'])){
 
@@ -270,7 +270,7 @@ if (isset($_GET['productregistration'])){
         die($sql);
     }
 
-    header("location:projects?sstooop=$status");
+    header("location:projects.php?sstooop=$status");
 }
 if (isset($_GET['insertcredetials'])){
 
@@ -293,7 +293,7 @@ if (isset($_GET['insertcredetials'])){
         die($sql);
     }
 
-    header("location:userprofiles?sstooop=$status");
+    header("location:userprofiles.php?sstooop=$status");
 }
 if (isset($_GET['tawlamemberfullname'])){
 
@@ -318,7 +318,7 @@ if (isset($_GET['tawlamemberfullname'])){
         die($sql);
     }
 
-    header("location:adminhome?insertmember=$status");
+    header("location:adminhome.php?insertmember=$status");
 }
 if(isset($_GET['tawlamemberid']))
 {
@@ -339,7 +339,7 @@ if(isset($_GET['tawlamemberid']))
         die($sql);
     }
 
-    header("location:tawlaaddinvoice?psid=$tawlamemberid");
+    header("location:tawlaaddinvoice.php?psid=$tawlamemberid");
 }
 
 if(isset($_GET['tawlafeememberid']))
@@ -359,7 +359,7 @@ if(isset($_GET['tawlafeememberid']))
         die($sql);
     }
 
-    header("location:tawlacollect?psid=$tawlafeememberid");
+    header("location:tawlacollect.php?psid=$tawlafeememberid");
 }
 if(isset($_GET['insertscriptfllup']))
 {
@@ -385,5 +385,5 @@ if(isset($_GET['insertscriptfllup']))
         die($sql);
     }
 
-    header("location:callregfile?recid=$insertscriptfllup");
+    header("location:callregfile.php?recid=$insertscriptfllup");
 }

@@ -813,7 +813,7 @@ else
                                         <td align="center" style="width: 50px;"><?php echo $row['phone_number']; ?></td>
                                         <td align="center" style="width: 50px;"><?php echo $row['email']; ?></td>
                                         <!--<td align="center" style="width: 50px;"><?php echo $row['off_role']; ?></td>-->
-                                        <td align="center" style="width: 50px;"><a href="userprofiles?reg_id=<?php echo $row['user_id']; ?>&&tpp=<?php echo $word; ?>" class="btn btn-primary"><?php echo $word; ?></a></td>
+                                        <td align="center" style="width: 50px;"><a href="userprofiles.php?reg_id=<?php echo $row['user_id']; ?>&&tpp=<?php echo $word; ?>" class="btn btn-primary"><?php echo $word; ?></a></td>
                                     </tr>
                                     <?php 
                                         $x++;

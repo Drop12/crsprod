@@ -705,7 +705,7 @@ if(isset($_GET['rstatus']))
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form class="row g-3" action="reassigned" method="GET">
+                                                                <form class="row g-3" action="reassigned.php" method="GET">
                                                                 <div class="col-md-12" hidden>
                                                                         <label for="inputLastName"
                                                                             class="form-label">Text</label>

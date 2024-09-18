@@ -49,11 +49,11 @@ if (isset($_GET['username'])) {
 
 
         if ($userrole == "crsadmin") {
-            header("location: adminhome");
+            header("location: adminhome.php");
         }
         else
         {
-            header("location: useradminhome");
+            header("location: useradminhome.php");
         }
     } else {
 
@@ -155,7 +155,7 @@ if (isset($_GET['username'])) {
         <h4 class="mb-1 text-center"><img src="assets/img/logo.png" alt="Logo" class="logo-image" style="width:350px;margin-bottom:10px;"></h4>
         <p class="mb-6">Please sign-in to your account</p>
 
-        <form id="formAuthentication" class="mb-6" action="index" method="GET">
+        <form id="formAuthentication" class="mb-6" action="index.php" method="GET">
           <div class="mb-6">
             <label for="email" class="form-label">Email or Username</label>
             <input type="text" class="form-control" id="email" name="username" placeholder="Enter your email or username" autofocus>
