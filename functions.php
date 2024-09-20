@@ -10,7 +10,7 @@ ini_set('display_startup_errors', 1);*/
 
 function login()
 {
-    //crs server conncetion   
+    
     define('DB_SERVER', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', 'pass12344');
@@ -44,8 +44,7 @@ function login()
     }
 
     return $db;
-}
-*/
+}*/
 function send_temail()
 {
     $curl = curl_init();
@@ -1272,4 +1271,15 @@ function validate_uniid($db,$uniqid)
     } else {
         return TRUE;
     }
+}
+
+function generateRandomString($length = 3) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    
+    return $randomString;
 }

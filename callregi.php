@@ -629,7 +629,7 @@ if(isset($_GET['rstatus']))
                                     </li>-->
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" href="logout">
+                                            <a class="btn btn-sm btn-danger d-flex" href="logout.php">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>
@@ -721,18 +721,16 @@ if(isset($_GET['rstatus']))
                                       <td align="center" style="width: 50px;"><?php echo get_cdr_program($row['mradi']); ?></td>
                                       <td align="center" style="width: 50px;"><?php echo "Yes"; ?></td>
                                       <td align="center"><?php echo $row['status']; ?></td>
-                                      <?php if($row['is_donload']==1)
+                                      <?php if($row['is_donload']==0)
                                         {
                                         ?>
-                                        <td align="center" style="width: 50px;"><audio controls>
-                                            <source src="https://faic.goldnet.tz/audioaudiovbmmax.wav" type="audio/wav">
-                                        </audio></td>
+                                        <td align="center" style="width: 50px;"><a href="downloadfile.php?reg_id=<?php echo $row['id']; ?>&&tpp=<?php echo $row['dfileloc']; ?>" class="btn btn-primary"><?php echo 'Download File'; ?></a></td>
                                     <?php      
                                       }
                                       else{
                                           ?>
                                           <td align="center"><audio controls>
-                                              <source src="https://faic.goldnet.tz/audioaudiovbmmax.wav" type="audio/wav">
+                                              <source src="https://faic.goldnet.tz/<?php echo $row['uniqid'];?>" type="audio/wav">
                                           </audio></td>
                                     <?php      
                                       }

@@ -102,7 +102,7 @@ elseif($dst=="4051" || $dst=="4052" || $dst=="5041" || $dst=="5042")
         die($sql);
     }
 }
-elseif($dst=="1000")
+elseif($dst=="1002" || $dst=="1001" ||  $dst=="1000")
 {
     $entry_id=get_entry_id($db,$src);
     
@@ -113,9 +113,6 @@ elseif($dst=="1000")
         die($sql);
     }
 }
-
-
-
 
 $response=array(
                     "status"=>"200",
