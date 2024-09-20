@@ -14,7 +14,7 @@ $db=login();
 
 //$smd=loginsms();
 
-$destination = "rtlogs/crsshortcode" . date('Y-m-d') . ".log";
+$destination = "assets/crsshortcode" . date('Y-m-d') . ".log";
 error_log("\n" . get_time() . " id :\n $id ", 3, $destination);
 error_log("\n" . get_time() . " serviceNumber :\n $serviceNumber ", 3, $destination);
 error_log("\n" . get_time() . " text :\n $text ", 3, $destination);
