@@ -3,7 +3,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-require_once 'function.php';
+require_once 'functions.php';
 $db=login();
 
 
