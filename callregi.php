@@ -730,7 +730,7 @@ if(isset($_GET['rstatus']))
                                       else{
                                           ?>
                                           <td align="center"><audio controls>
-                                              <source src="https://faic.goldnet.tz/<?php echo $row['uniqid'];?>" type="audio/wav">
+                                              <source src="https://faic.goldnet.tz/<?php echo $row['dfileloc'];?>" type="audio/wav">
                                           </audio></td>
                                     <?php      
                                       }
