@@ -7,8 +7,8 @@ require_once 'functions.php';
 $db=login();
 
 
-$dtat_id=$data['reg_id'];
-$audiod=$data['tpp'];
+$dtat_id=$_GET['reg_id'];
+$audiod=$_GET['tpp'];
 
 $parts = explode("/", $audiod);
 $filename = rtrim($parts[1], '@');
