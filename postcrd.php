@@ -41,6 +41,7 @@ $AcctId=$data['AcctId'];
 $src=$data['src'];
 $dst=$data['dst'];
 
+
 if($dst=="750011800" || $dst=="748501994")
 {
     date_default_timezone_set('Africa/Dar_es_Salaam');
@@ -56,10 +57,18 @@ if($dst=="750011800" || $dst=="748501994")
     }
 }
 elseif($dst=="4001" || $dst=="5002")
-{
+{  
+    
     $entry_id=get_entry_id($db,$src);
-    $dst=get_dst_en($dst);
-    $sql_insert="UPDATE `tbl_call_registry` SET `lugha`='$dst' where `id`='$entry_id'";
+    if ($dst == 5002) {
+        $language=4002;
+    } else {
+        $language=4001;
+    }
+
+    $sql_insert="UPDATE `tbl_call_registry` SET `lugha`='$language' where `id`='$entry_id'";
+    //echo $sql_insert;
+    //die($sql);
     if(!mysqli_query($db, $sql_insert))
     {
         die($sql);
@@ -95,11 +104,13 @@ elseif($dst=="4031" || $dst=="4032"  || $dst=="4033" || $dst=="4034" || $dst=="4
         die($sql);
     }
 }
-elseif($dst=="4051" || $dst=="4052" || $dst=="5041" || $dst=="5042")
+elseif($dst=="4041" || $dst=="4042" || $dst=="5041" || $dst=="5042")
 {
     $entry_id=get_entry_id($db,$src);
     $dst=get_dst_followup($dst);
     $sql_insert="UPDATE `tbl_call_registry` SET `mrejesho`='$dst' where `id`='$entry_id'";
+    //echo $src;
+    //die();
     if(!mysqli_query($db, $sql_insert))
     {
         die($sql);
@@ -108,8 +119,7 @@ elseif($dst=="4051" || $dst=="4052" || $dst=="5041" || $dst=="5042")
 elseif($dst=="1002" || $dst=="1001" ||  $dst=="1000")
 {
     $entry_id=get_entry_id($db,$src);
-    
-    $dst=$data['recordfiles'];
+    $dst=$data['caller_name'];
     $sql_insert="UPDATE `tbl_call_registry` SET `filelocd`='$dst' where `id`='$entry_id'";
     if(!mysqli_query($db, $sql_insert))
     {
@@ -126,3 +136,5 @@ header('Content-Type: application/json');
 $response=json_encode($response);
 print_r($response);
 die(); 
+
+

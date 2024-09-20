@@ -1283,3 +1283,100 @@ function generateRandomString($length = 3) {
     
     return $randomString;
 }
+
+function get_entry_id($db,$src)
+{
+    $sql = "SELECT `id` from tbl_call_registry where `phone_number`='$src' order by reg_date desc LIMIT 1";
+    $result_set = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result_set, MYSQLI_ASSOC)) {
+        $total_count = $row['id'];
+    }
+
+    return $total_count;
+}
+function get_dst_en($language)
+{
+   
+    if ($language == 5002) {
+        return 4002;
+    } else {
+        return 4001;
+    }
+}
+function get_dst_region($region)
+{
+    if($region==4011 || $region==5011)
+    {
+        return 4011;
+    }
+    elseif($region==4012 || $region==5012)
+    {
+        return 4012;
+    }
+    elseif($region==4013 || $region==5013)
+    {
+        return 4013;
+    }
+    elseif($region==4014 || $region==5014)
+    {
+        return 4014;
+    }
+    elseif($region==4015 || $region==5015)
+    {
+        return 4015;
+    }
+    elseif($region==4016 || $region==5016)
+    {
+        return 4016;
+    }
+}
+function get_dst_programt($program)
+{
+    if($program==4031 || $program==5031)
+    {
+        return 4031;
+    }
+    elseif($program==4032 || $program==5032)
+    {
+        return 4032;
+    }
+    elseif($program==4033 || $program==5033)
+    {
+        return 4033;
+    }
+    elseif($program==4034 || $program==5034)
+    {
+        return 4034;
+    }
+    elseif($program==4035 || $program==5035)
+    {
+        return 4035;
+    }
+    elseif($program==4036 || $program==5036)
+    {
+        return 4036;
+    } 
+}
+function get_dst_category($category)
+{
+    if($category==4021 || $category==5021)
+    {
+        return 4021;
+    }
+    elseif($category==4022 || $category==5022)
+    {
+        return 4022;
+    }
+   
+}
+function get_dst_followup($followup)
+{
+    if($followup==4041 || $followup==5041)
+    {
+        return 4041;
+    }
+    elseif($followup==4042 || $followup==5042)
+    {
+        return 4042;
+    }
+}

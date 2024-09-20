@@ -1,11 +1,10 @@
 <?php
 
-$destination = "assets/cdr/" . date('Y-m-d') . ".log";
-
-$json="Test logs";
-
-if (error_log("\n" . date('Y-m-d H:i:s') . " Incoming Request :\n $json ", 3, $destination) === false) {
-    echo "Failed to write to log file.";
-} else {
-    echo "Log entry added successfully.";
-}
+if($followup==4041 || $followup==5041)
+    {
+        return 4041;
+    }
+    elseif($followup==4042 || $followup==5042)
+    {
+        return 4042;
+    }
