@@ -41,12 +41,12 @@ elseif(isset($_GET['updateprod']))
     
     
 }
-
-if(isset($_GET['rstatus']))
+*/
+if(isset($_GET['dstatus']))
 {
     $rstatus = mysqli_real_escape_string($db,$_GET['rstatus']);
 
-}*/
+}
 
 ?>
 <!DOCTYPE html>
