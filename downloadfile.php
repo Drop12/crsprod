@@ -50,8 +50,8 @@ $status = $data['status'];
 if($status==200)
 {
     $sql_update="UPDATE  tbl_call_registry SET `dfileloc`='$unix_timestamp',`is_donload`='1' where `id`='$dtat_id'";
-    echo $sql_update;
-    die();
+    //echo $sql_update;
+    //die();
     if(mysqli_query($db, $sql_update))
     {
 
