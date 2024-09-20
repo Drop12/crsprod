@@ -119,7 +119,13 @@ elseif($dst=="4041" || $dst=="4042" || $dst=="5041" || $dst=="5042")
 elseif($dst=="1002" || $dst=="1001" ||  $dst=="1000")
 {
     $entry_id=get_entry_id($db,$src);
-    $dst=$data['caller_name'];
+
+    if (isset($data['caller_name'])) {
+        $dst=$data['caller_name'];
+    } elseif (isset($data['recordfiles'])) {
+        $dst=$date['recordfiles'];
+    }
+    
     $sql_insert="UPDATE `tbl_call_registry` SET `filelocd`='$dst' where `id`='$entry_id'";
     if(!mysqli_query($db, $sql_insert))
     {
