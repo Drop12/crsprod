@@ -54,14 +54,28 @@ if($status==200)
     //die();
     if(mysqli_query($db, $sql_update))
     {
+      $filedata = $data['filedata'];
+      $audio_data = base64_decode($filedata);
 
+      // Specify the file path in the 'assets' directory
+      $file_path = 'assets/'.$unix_timestamp;
+
+      // Save the decoded audio data to a .wav file
+      file_put_contents($file_path, $audio_data);
+
+      if (file_exists($file_path)) {
+       $estatus='File downloaded Successfully';
+    } else {
+      $estatus='File downloaded failed';
+    }
+      
     }
     else
     {
         echo $sql_update;
         die();
     }
-    header("location:callregi.php");
+    header("location:callregi.php?dstatus=$estatus");
 }
 else
 {
