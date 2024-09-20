@@ -15,7 +15,7 @@ $db = login();
 // Processing form data when form is submitted
 $status = null;
 
-if (isset($_GET['c_id'])) {
+/*if (isset($_GET['c_id'])) {
     
     
     $c_id = mysqli_real_escape_string($db,$_GET['c_id']);
@@ -46,7 +46,7 @@ if(isset($_GET['rstatus']))
 {
     $rstatus = mysqli_real_escape_string($db,$_GET['rstatus']);
 
-}
+}*/
 
 ?>
 <!DOCTYPE html>
