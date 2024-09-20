@@ -724,7 +724,7 @@ if(isset($_GET['rstatus']))
                                       <?php if($row['is_donload']==0)
                                         {
                                         ?>
-                                        <td align="center" style="width: 50px;"><a href="downloadfile.php?reg_id=<?php echo $row['id']; ?>&&tpp=<?php echo $row['dfileloc']; ?>" class="btn btn-primary"><?php echo 'Download File'; ?></a></td>
+                                        <td align="center" style="width: 50px;"><a href="downloadfile.php?reg_id=<?php echo $row['id']; ?>&&tpp=<?php echo $row['filelocd']; ?>" class="btn btn-primary"><?php echo 'Download File'; ?></a></td>
                                     <?php      
                                       }
                                       else{
