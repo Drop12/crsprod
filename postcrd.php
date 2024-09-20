@@ -119,8 +119,9 @@ elseif($dst=="4041" || $dst=="4042" || $dst=="5041" || $dst=="5042")
 elseif($dst=="1002" || $dst=="1001" ||  $dst=="1000")
 {
     $entry_id=get_entry_id($db,$src);
-    $dst=$date['recordfiles'];
+    $dst=$data['recordfiles'];
     $sql_insert="UPDATE `tbl_call_registry` SET `filelocd`='$dst' where `id`='$entry_id'";
+    //die($sql_insert);
     if(!mysqli_query($db, $sql_insert))
     {
         die($sql);
