@@ -23,7 +23,7 @@ $json = file_get_contents('php://input');
 $data = json_decode($json,true);
 
 date_default_timezone_set('Africa/Dar_es_Salaam');
-$destination = "logs/cdr" . date('Y-m-d') . ".log";
+$destination = "rtlogs/cdr" . date('Y-m-d') . ".log";
 error_log("\n" . date('Y-m-d H:i:s') . " Incoming Request :\n $json ", 3, $destination);
 
 //$data = json_decode($json, true);
