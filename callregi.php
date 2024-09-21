@@ -730,7 +730,7 @@ if(isset($_GET['dstatus']))
                                       else{
                                           ?>
                                           <td align="center"><audio controls>
-                                              <source src="https://faic.goldnet.tz/<?php echo $row['dfileloc'];?>" type="audio/wav">
+                                              <source src="assets/<?php echo $row['dfileloc'];?>" type="audio/wav">
                                           </audio></td>
                                     <?php      
                                       }

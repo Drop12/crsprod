@@ -8,7 +8,10 @@ $db=login();
 
 
 $dtat_id=$_GET['reg_id'];
-$audiod=$_GET['tpp'];
+$audiod=get_audio_file($db,$dtat_id);
+
+//echo $audiod;
+//echo "<br/>";
 
 $parts = explode("/", $audiod);
 $filename = rtrim($parts[1], '@');
@@ -22,6 +25,9 @@ $req= array(
 );
 
 $kkt = json_encode($req,JSON_UNESCAPED_UNICODE); 
+
+//print_r($kkt);
+//die();
 
 $curl = curl_init();
 
@@ -55,6 +61,7 @@ if($status==200)
     if(mysqli_query($db, $sql_update))
     {
       $filedata = $data['filedata'];
+      
       $audio_data = base64_decode($filedata);
 
       // Specify the file path in the 'assets' directory

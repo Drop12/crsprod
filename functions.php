@@ -16,10 +16,7 @@ function login()
     define('DB_PASSWORD', 'pass12344');
     define('DB_NAME', 'crs20204');
 
-    
     $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-   
     if ($db === false) {
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
@@ -74,6 +71,17 @@ function send_temail()
     return;
 }
 
+function get_audio_file($db,$dtat_id)
+{
+    $sql = "SELECT 	`filelocd` FROM `tbl_call_registry` where `id`='$dtat_id' LIMIT 1";
+    $result_set = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result_set, MYSQLI_ASSOC)) {
+        $filelocd = $row['filelocd'];
+    }
+
+    // If result matched $myusername and $mypassword, table row must be 1 row
+    return $filelocd;
+}
 function get_total_reg_c($db)
 {
     $sales_id=$_SESSION['user_id'];
