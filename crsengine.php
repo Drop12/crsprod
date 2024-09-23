@@ -592,7 +592,7 @@ else
 
 //echo '';
 
-$destination2 = "rtlogs/crsshortcode" . date('Y-m-d') . ".log";
+$destination2 = "assets/crsshortcode" . date('Y-m-d') . ".log";
 $sql1 = "SELECT * from `tbl_care_outgoingsms`  where `is_sent`='0' and `msisdn`='$msisdn' order by `reg_date` ASC LIMIT 1";
 $result_set = mysqli_query($db, $sql1);
 $count = mysqli_num_rows($result_set);

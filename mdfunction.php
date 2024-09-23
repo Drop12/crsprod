@@ -13,6 +13,11 @@ define('DB_PASSWORD', 'pass12344');
 define('DB_NAME', 'crs20204');
 
 
+/*define('DB_SERVER', 'localhost');
+    define('DB_USERNAME', 'crs');
+    define('DB_PASSWORD', '@123crs');
+    define('DB_NAME', 'crenew');*/
+
     /* Attempt to connect to MySQL database */
     $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 

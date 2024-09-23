@@ -657,7 +657,7 @@ $db = login();
                                     </li>-->
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" href="logout">
+                                            <a class="btn btn-sm btn-danger d-flex" href="logout.php">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>
@@ -836,7 +836,7 @@ $db = login();
                                       <td align="center" style="width: 50px;"><?php echo get_crd_rejesho($row['requirefd']); ?></td>
                                       <td align="center"><?php echo $row['status_r']; ?></td>
                                         <td align="center"><?php echo $row['regdetails']; ?></td>
-                                        <td align="center"><a href="callregfile?recid=<?php echo $row['id'];?>" class=" btn btn-info">Open File</a></td>
+                                        <td align="center"><a href="callregfile.php?recid=<?php echo $row['id'];?>" class=" btn btn-info">Open File</a></td>
                                   </tr>
                                   <?php 
                                       $x++;

@@ -1,8 +1,9 @@
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category = $_POST['category'];
 
-    define('DB_SERVER', 'localhost');
+     define('DB_SERVER', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', 'pass12344');
     define('DB_NAME', 'crs20204');
@@ -20,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Prepare and execute the query
-    $stmt = $conn->prepare("SELECT district_id, district_name FROM tbl_district2 WHERE region_id = ?");
+    $stmt = $conn->prepare("SELECT user_id, full_name FROM tbl_credentials WHERE userrole = ?");
     $stmt->bind_param("s", $category);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -29,11 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         echo '<option value="" disabled selected>--Please select--</option>';
         while ($row = $result->fetch_assoc()) {
-            echo '<option value="' . htmlspecialchars($row['district_id']) . '">' . htmlspecialchars($row['district_name']) . '</option>';
+            echo '<option value="' . htmlspecialchars($row['user_id']) . '">' . htmlspecialchars($row['full_name']) . '</option>';
         }
-        
     } else {
-        echo '<option value="" disabled>District found for this category.</option>';
+        echo '<option value="" disabled>No users found for this category.</option>';
     }
 
     // Close the connection
@@ -42,4 +42,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     echo '<option value="" disabled>Invalid request method.</option>';
 }
-
+?>

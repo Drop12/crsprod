@@ -99,7 +99,7 @@ if (isset($_GET['insertquestionsqqq'])){
             die($sql);
         }
         
-        header("location:projectq?reg_id=$insertquestionsqqq&&sstooop=$status");
+        header("location:projectq.php?reg_id=$insertquestionsqqq&&sstooop=$status");
     }
     elseif($questiontype=="DROPDOWN" AND $followupqn=="No")
     {
@@ -176,6 +176,8 @@ if (isset($_GET['insertcallregistry'])){
     $phone_number=mysqli_real_escape_string($db, $_GET['phone_number']);
     $tbl_channel=mysqli_real_escape_string($db, $_GET['tbl_channel']);
 
+    $assignedtouser=mysqli_real_escape_string($db, $_GET['assignedtouser']);
+
     date_default_timezone_set('Africa/Dar_es_Salaam');
 
     // Get the current date and time
@@ -186,8 +188,8 @@ if (isset($_GET['insertcallregistry'])){
     // Convert the timestamp to a string
     $timestamp_str = (string)$timestamp;
 
-    $sql = "INSERT INTO `tbl_registryinput`(`ticket_id`,`district`,`phone_number`,`requirefd`,`fk_entry`,`full_name`, `sex`, `region`, `issue_p`, `project_name`, `priority`, `category_r`, `ward_village`, `regdetails`, `status_r`, `tbl_channel`, `reg_date`) 
-    VALUES ('$timestamp_str','$district','$phone_number','$requirefeedback','$insertdprojectbb','$fullname','$gender','$region','$whatissue','$project','$priority','$category','$wardvillage','$nmessage','assigned','$tbl_channel','$currentDateTime')";
+    $sql = "INSERT INTO `tbl_registryinput`(`assigned_to`,`ticket_id`,`district`,`phone_number`,`requirefd`,`fk_entry`,`full_name`, `sex`, `region`, `issue_p`, `project_name`, `priority`, `category_r`, `ward_village`, `regdetails`, `status_r`, `tbl_channel`, `reg_date`) 
+    VALUES ('$assignedtouser','$timestamp_str','$district','$phone_number','$requirefeedback','$insertdprojectbb','$fullname','$gender','$region','$whatissue','$project','$priority','$category','$wardvillage','$nmessage','assigned','$tbl_channel','$currentDateTime')";
     if(mysqli_query($db, $sql))
     {
         if($tbl_channel=="shortcode")
@@ -201,7 +203,8 @@ if (isset($_GET['insertcallregistry'])){
             $update_registry="UPDATE tbl_call_registry SET `is_transcribed`='1' where `id`='$insertdprojectbb'";
             mysqli_query($db, $update_registry);
         }
-        send_temail();
+        $agent_email=get_user_email($db,$assignedtouser);
+        send_temail($agent_email);
         $status="Data Added Successfully";
     }
     else
@@ -376,8 +379,8 @@ if(isset($_GET['insertscriptfllup']))
     VALUES ('$ftitle','$nmessage','$insertscriptfllup','$current_date_time','$user_id')";
     if(mysqli_query($db, $sql))
     {
-        $update_sql="UPDATE tbl_registryinput SET `status_r`='$ftitle',`assigned_to`='$user_id' where `id`='$insertscriptfllup'";
-        mysqli_query($db,$update_sql);
+        //$update_sql="UPDATE tbl_registryinput SET `status_r`='$ftitle',`assigned_to`='$user_id' where `id`='$insertscriptfllup'";
+        //mysqli_query($db,$update_sql);
         $status="Details Added Successfully";
     }
     else

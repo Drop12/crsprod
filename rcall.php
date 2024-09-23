@@ -578,7 +578,7 @@
                                     </li>-->
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" href="logout">
+                                            <a class="btn btn-sm btn-danger d-flex" href="logout.php">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>

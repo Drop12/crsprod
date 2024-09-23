@@ -631,7 +631,7 @@ if(isset($_GET['sstooop']))
                                     </li>-->
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" href="logout">
+                                            <a class="btn btn-sm btn-danger d-flex" href="logout.php">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>
@@ -701,11 +701,9 @@ if(isset($_GET['sstooop']))
              
                 <div class="col-lg-3">
                     <div class="col">
-                                                <!-- Button trigger modal -->
                         <button type="button" class="btn btn-warning"
                             data-bs-toggle="modal"
                             data-bs-target="#exampleLargeModalfld">Add Follow-up Details</button>
-                        <!-- Modal -->
                         <div class="modal fade" id="exampleLargeModalfld"
                             tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
@@ -756,7 +754,6 @@ if(isset($_GET['sstooop']))
                                                     class="btn btn-primary px-5"
                                                     style="background-color: #0D73BB">Save</button>
                                             </div>
-
                                         </form>
                                     </div>
                                 </div>
@@ -766,7 +763,6 @@ if(isset($_GET['sstooop']))
                 </div>
             </div>
             <br/>
-<!-- DataTable with Buttons -->
 
             <div class="row">
                 <div class="col-sm-12">
@@ -791,8 +787,6 @@ if(isset($_GET['sstooop']))
                                     $sql_gete = "SELECT * FROM   tbl_followup where call_id='$reg_iddddd' order by reg_date desc";
                                     $result_set = mysqli_query($db, $sql_gete);
                                     while ($row = mysqli_fetch_array($result_set, MYSQLI_ASSOC)) {
-
-                                       
                                     ?>
                                     <tr>
                                         <td align="center" style="width: 20px;"><?php echo $x; ?></td>

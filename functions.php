@@ -11,6 +11,12 @@ ini_set('display_startup_errors', 1);*/
 function login()
 {
     
+    /*define('DB_SERVER', 'localhost');
+    define('DB_USERNAME', 'crs');
+    define('DB_PASSWORD', '@123crs');
+    define('DB_NAME', 'crenew');*/
+
+
     define('DB_SERVER', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', 'pass12344');
@@ -42,8 +48,15 @@ function login()
 
     return $db;
 }*/
-function send_temail()
+function send_temail($remail)
 {
+    $req= array(
+        "api_key"=>"YTc4YWY3ZWVlZWViODU3YTY5ODUzNTA4ZGU3YzVhYzM1NTdjNjM1MWEyYzA1ODU1ZDhlqA12AjkP0qNTc4ZjU3N2QwMDVmMw==",
+       "send_to"=>$remail
+    );
+    
+    $kkt = json_encode($req,JSON_UNESCAPED_UNICODE); 
+
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -55,10 +68,7 @@ function send_temail()
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS =>'{
-        "api_key": "YTc4YWY3ZWVlZWViODU3YTY5ODUzNTA4ZGU3YzVhYzM1NTdjNjM1MWEyYzA1ODU1ZDhlqA12AjkP0qNTc4ZjU3N2QwMDVmMw==",
-        "send_to": "ronilickd@yahoo.com"
-    }',
+    CURLOPT_POSTFIELDS =>$kkt,
     CURLOPT_HTTPHEADER => array(
         'Content-Type: application/json'
     ),
@@ -70,7 +80,38 @@ function send_temail()
 
     return;
 }
+function get_user_system_role($userrole)
+{
+    if($userrole=='sensitive')
+    {
+        $roleuser='Sensitive';
+    }
+    elseif($userrole=='programmatic')
+    {
+        $roleuser='Programmatic';
+    }
+    elseif($userrole=='outofscope')
+    {
+        $roleuser='Out Of Scope';
+    }
+    elseif($userrole=='crsadmin')
+    {
+        $roleuser='Administrator';
+    }
 
+    return $roleuser;
+}
+function get_user_email($db,$assignedtouser)
+{
+    $sql = "SELECT 	`email` FROM `tbl_credentials` where `user_id`='$assignedtouser' LIMIT 1";
+    $result_set = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result_set, MYSQLI_ASSOC)) {
+        $filelocd = $row['email'];
+    }
+
+    // If result matched $myusername and $mypassword, table row must be 1 row
+    return $filelocd;
+}
 function get_audio_file($db,$dtat_id)
 {
     $sql = "SELECT 	`filelocd` FROM `tbl_call_registry` where `id`='$dtat_id' LIMIT 1";
@@ -885,7 +926,8 @@ function get_total_entries_ad($db)
 function get_total_assigned_calls($db)
 {
     $user_idd=$_SESSION['user_id'];
-    $query = "SELECT * FROM tbl_registryinput where assigned_to='$user_idd' and (`status_r`='investigation' OR `status_r`='action')";
+    //$query = "SELECT * FROM tbl_registryinput where assigned_to='$user_idd' and (`status_r`='investigation' OR `status_r`='action')";
+    $query = "SELECT * FROM tbl_registryinput where assigned_to='$user_idd'";
     //die($query);
     $result = mysqli_query($db,$query);
     $count = mysqli_num_rows($result); 

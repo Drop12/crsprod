@@ -628,7 +628,7 @@ else
                                     </li>-->
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" href="logout">
+                                            <a class="btn btn-sm btn-danger d-flex" href="logout.php">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>
@@ -695,7 +695,7 @@ else
                                 <div class="card-body">
                                     <h4 class="card-title">Add User</h4>
                                         <p class="card-title-desc">Kindly select dates and filter</p>
-                                    <form action="insertscript" method="GET">
+                                    <form action="insertscript.php" method="GET">
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                                 <label for="branchname">Full Name:</label>
@@ -783,7 +783,7 @@ else
                                         <th class="text-center">Phone Number</th>
                                         <th class="text-center">Email</th>
                                         <!--<th class="text-center">Status</th>-->
-                                        <!--<th class="text-center">User Role</th>-->
+                                        <th class="text-center">User Role</th>
                                         <!--<th class="text-center">Projects</th>-->
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -812,7 +812,7 @@ else
                                         <td align="center" style="width: 50px;"><?php echo $row['full_name']; ?></td>
                                         <td align="center" style="width: 50px;"><?php echo $row['phone_number']; ?></td>
                                         <td align="center" style="width: 50px;"><?php echo $row['email']; ?></td>
-                                        <!--<td align="center" style="width: 50px;"><?php echo $row['off_role']; ?></td>-->
+                                        <td align="center" style="width: 50px;"><?php echo get_user_system_role($row['userrole']); ?></td>
                                         <td align="center" style="width: 50px;"><a href="userprofiles.php?reg_id=<?php echo $row['user_id']; ?>&&tpp=<?php echo $word; ?>" class="btn btn-primary"><?php echo $word; ?></a></td>
                                     </tr>
                                     <?php 

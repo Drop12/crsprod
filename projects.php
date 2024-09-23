@@ -614,7 +614,7 @@ if(isset($_GET['sstooop']))
                                     </li>-->
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" href="logout">
+                                            <a class="btn btn-sm btn-danger d-flex" href="logout.php">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>
@@ -681,7 +681,7 @@ if(isset($_GET['sstooop']))
                                 <div class="card-body">
                                     <h4 class="card-title">Project Registration</h4>
                                         <p class="card-title-desc">Kindly fill the below details</p>
-                                    <form action="insertscript" method="GET">
+                                    <form action="insertscript.php" method="GET">
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                                 <label for="productregistration">Project Name:</label>

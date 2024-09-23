@@ -886,13 +886,19 @@ if(isset($_GET['dstatus']))
                                                                     </div>
                                                                     <br/>
                                                                     <div class="col-md-6">
-                                                                        <label for="inputLastName" class="form-label">Select Category</label>
-                                                                        <select id="categorySelectttyyp" class="form-control show-tick" name="category" required
-                                                                            style="width: 100%;box-sizing: border-box;border: 2px solid #ccc;">
-                                                                            <option value="" disabled selected>--Please select --</option>
+                                                                        <label for="categorySelectuser" class="form-label">Select Category</label>
+                                                                        <select id="categorySelectuser" class="form-control show-tick" name="category" required style="width: 100%; box-sizing: border-box; border: 2px solid #ccc;">
+                                                                            <option value="" disabled selected>--Please select--</option>
                                                                             <option value="sensitive">Sensitive</option>
-                                                                            <option value="programmatic">Programatic</option>
-                                                                            <option value="outofscope">Out of Scope</option>
+                                                                            <option value="programmatic">Programmatic</option>
+                                                                            <option value="outofscope">Out Of Scope</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-md-12 mt-4"> <!-- Added Bootstrap spacing utility instead of <br/> -->
+                                                                        <label for="assignedtouser" class="form-label">Assign To</label>
+                                                                        <select id="assignedtouser" class="form-control" name="assignedtouser" style="width: 100%;">
+                                                                            
                                                                         </select>
                                                                     </div>
                                                                     <br/>
@@ -997,6 +1003,28 @@ if(isset($_GET['dstatus']))
 <script src="assets/vendor/libs/@form-validation/popular.js"></script>
 <script src="assets/vendor/libs/@form-validation/bootstrap5.js"></script>
 <script src="assets/vendor/libs/@form-validation/auto-focus.js"></script>
+<script>
+document.getElementById('categorySelectuser').addEventListener('change', function() {
+    var category = this.value;
+
+    if (category) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'get_users_assign.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var assignedtouser = document.getElementById('assignedtouser');
+                console.log(assignedtouser);
+                assignedtouser.innerHTML = xhr.responseText;
+            }
+        };
+        
+        xhr.send('category=' + encodeURIComponent(category));
+    }
+});
+</script>
+
 <script>
   document.getElementById('categorySelect').addEventListener('change', function() {
     var category = this.value;

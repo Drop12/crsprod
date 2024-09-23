@@ -812,13 +812,13 @@ $db = login();
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- Start of the form -->
-                                                    <form action="adminhome" method="post">
+                                                    <form action="adminhome.php" method="POST">
                                                         <div class="row">
                                                             <div class="col mb-4">
                                                                 <label for="nameWithTitle"
                                                                     class="form-label">Year</label>
                                                                 <input type="text" id="nameWithTitle" name="year"
-                                                                    class="form-control">
+                                                                    class="form-control" required>
                                                             </div>
                                                         </div>
                                                 </div>
@@ -853,7 +853,7 @@ $db = login();
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- Start of the form -->
-                                                    <form action="adminhome" method="post">
+                                                    <form action="adminhome.php" method="POST">
                                                         <div class="row">
                                                             <div class="col mb-4">
                                                                 <label for="nameWithTitle" class="form-label">Year</label>
@@ -905,7 +905,7 @@ $db = login();
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- Start of the form -->
-                                                    <form action="adminhome" method="post">
+                                                    <form action="adminhome.php" method="POST">
                                                         <div class="row">
                                                             <div class="col mb-4">
                                                                 <label for="nameWithTitle" class="form-label">Year</label>
@@ -965,7 +965,7 @@ $db = login();
                                                 </div>
                                                 <div class="modal-body">
                                                     <!-- Start of the form -->
-                                                    <form action="adminhome" method="post">
+                                                    <form action="adminhome.php" method="POST">
                                                         <div class="row">
                                                             <div class="col mb-4">
                                                                 <label for="nameWithTitle" class="form-label">Year</label>
@@ -982,7 +982,7 @@ $db = login();
                                                                     <option value="Mbeya">Mbeya</option>
                                                                     <option value="Kigoma">Kigoma</option>
                                                                     <option value="Tabora">Tabora</option>
-                                                                    <option value="Kwengineko">Kwengineko</option>
+                                                                    <option value="Others">Others</option>
                                                                 </select>
                                                             </div>
                                                         </div>
